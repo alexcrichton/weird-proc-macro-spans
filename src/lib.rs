@@ -54,6 +54,9 @@ fn parse(s: &str) -> TokenTree {
 
 #[proc_macro]
 pub fn failure1(_input: TokenStream) -> TokenStream {
+    // mod foo {
+    //    use super::*;
+    // }
     let v = vec![
         term("mod"), term("foo"),
         braces(vec! [
@@ -213,10 +216,7 @@ pub fn failure6(_input: TokenStream) -> TokenStream {
     return v.into_iter().collect()
 }
 
-// using the `call_site` span also doesn't work...
 #[proc_macro]
-pub fn failure6_2(input: TokenStream) -> TokenStream {
+pub fn success6(input: TokenStream) -> TokenStream {
     call_site_all(failure6(input))
 }
-
-// I don't think this can succeed unless the original macro is fixed...

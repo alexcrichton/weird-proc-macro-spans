@@ -7,4 +7,3 @@ use wut::success1;
 
 success1! {
 }
-
