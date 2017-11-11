@@ -1,0 +1,14 @@
+[package]
+name = "wut"
+version = "0.1.0"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+
+[lib]
+proc-macro = true
+
+# [dependencies]
+# quote = { path = "../../quote" }
+# proc-macro2 = { version = '0.1.3', features = ['unstable'] }
+
+[dev-dependencies]
+foo = { path = "foo" }
