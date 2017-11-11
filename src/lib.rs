@@ -1,12 +1,19 @@
+//! All procedural macros used for the various tests, most procedural macros
+//! here are pretty self-contained
+
 #![feature(proc_macro)]
 
 extern crate proc_macro;
 
 use proc_macro::*;
 
+// First up, a bunch of helpers to create tokens. These are just meant to make
+// the test cases below a little more ergonomic to read
+
 fn tt(kind: TokenNode) -> TokenTree {
     TokenTree {
-        span: Span::default(),
+        span: Span::default(), // by default we're testing the `default` span
+                               // everywhere because... well... it's default
         kind,
     }
 }
